@@ -1,6 +1,6 @@
 # What is this?
 
-This is a web app templete using "echo" framework.
+This is a web app templete using [Echo](https://echo.labstack.com/) framework.
 
 # Requirement
 
@@ -23,4 +23,4 @@ Log
 
 # Reference
 
-ORM : [GORM](http://gorm.io/ja_JP/docs/index.html)
+ORM : [GORM](https://gorm.io/docs/index.html)

@@ -1,11 +1,10 @@
 package main
 
 import (
-	"os"
-	"github.com/sirupsen/logrus"
-	"github.com/labstack/echo/v4"
-	"net/http"
 	"github.com/joho/godotenv"
+	"github.com/karaageeee/echo-heroku-template/route"
+	"github.com/sirupsen/logrus"
+	"os"
 )
 
 func init() {
@@ -31,7 +30,7 @@ func main() {
 		logrus.Fatal("$PORT must be set")
 	}
 
-	router := router()
+	router := route.Setup()
 
 	host := ""
 	env := os.Getenv("ENV")
@@ -40,13 +39,4 @@ func main() {
 		host = "localhost"
 	}
 	logrus.Fatal(router.Start(host + ":" + port))
-}
-
-func router() *echo.Echo  {
-	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
-
-	return e
 }

@@ -4,8 +4,8 @@ This is a web app templete using [Echo](https://echo.labstack.com/) framework.
 
 # Requirement
 
-Go : 1.11+
-DB : PostgreSQL (Changeable db/setup.go if necessary)
+- Go : 1.11+
+- DB : PostgreSQL (Changeable db/setup.go if necessary)
 
 # Sample Request
 

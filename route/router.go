@@ -2,6 +2,7 @@ package route
 
 import (
 	"github.com/karaageeee/echo-heroku-template/controller"
+	appHandler "github.com/karaageeee/echo-heroku-template/handler"
 	appMw "github.com/karaageeee/echo-heroku-template/middleware"
 	"github.com/labstack/echo/v4"
 	echoMw "github.com/labstack/echo/v4/middleware"
@@ -18,6 +19,9 @@ func Setup() *echo.Echo {
 		Format: `{"time":"${time_rfc3339_nano}","method":"${method}","uri":"${uri}","status":${status},"error":"${error}"}` + "\n",
 	}))
 	e.Use(appMw.AuthValidate())
+
+	// Set error handler
+	e.HTTPErrorHandler = appHandler.JSONHTTPErrorHandler
 
 	// Routes
 	v1 := e.Group("/api/v1")

@@ -12,7 +12,7 @@ This is a web app templete using [Echo](https://echo.labstack.com/) framework.
 Sample Command
 
 ```
-curl http://localhost:1234/api/v1/ -H "Authorization: API-TOKEN web-app-user-token"
+curl http://localhost:8080/api/v1/users/1 -H "Authorization: API-TOKEN web-app-user-token"
 ```
 
 Log
@@ -20,6 +20,10 @@ Log
 ```
 {"User":"WebAppUser","level":"info","msg":"Request accepted","time":"2020-07-20T19:28:45+09:00"}
 ```
+
+# Note
+
+Set environment variables for settings. Check template.env file.
 
 # Reference
 
